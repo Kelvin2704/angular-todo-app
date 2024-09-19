@@ -1,0 +1,8 @@
+<div *ngIf="loading$ | async">Loading...</div>
+<div *ngIf="error$ | async as error">Error: {{ error }}</div>
+
+<ul>
+  <li *ngFor="let todo of todos$ | async">
+    {{ todo.title }} - {{ todo.completed ? 'Done' : 'Pending' }}
+  </li>
+</ul>
